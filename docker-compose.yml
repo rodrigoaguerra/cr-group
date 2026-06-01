@@ -1,0 +1,36 @@
+services:
+
+  php:
+    build: ./php
+    container_name: php56
+    ports:
+      - "8080:80"
+    volumes:
+      - /var/www/html/cr-group:/var/www/html
+    depends_on:
+      - mysql
+    networks:
+      - appnet
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql57
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cr_group
+      MYSQL_USER: cr_group
+      MYSQL_PASSWORD: 123456@@
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql57 
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
+
+volumes:
+  mysql_data:
