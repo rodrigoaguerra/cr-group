@@ -24,7 +24,7 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - mysql_data:/var/lib/mysql57 
+      - ./mysql_data:/var/lib/mysql
     networks:
       - appnet
 
@@ -34,3 +34,4 @@ networks:
 
 volumes:
   mysql_data:
+    driver: local
