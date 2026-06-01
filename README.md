@@ -1,8 +1,10 @@
 # 🛠️ CR Group Agenda CRUD
+A aplicação de agenda foi desenvolvida utilizando PHP 5.6 com acesso ao banco de dados MySQL via PDO, seguindo boas práticas de organização e segurança, como o uso de prepared statements para evitar SQL Injection.
 
-Este projeto consiste em uma API RESTful desenvolvida em PHP puro, utilizando PDO para acesso ao banco de dados MySQL.
+O sistema contempla as funcionalidades básicas de CRUD, permitindo o cadastro, listagem, edição e exclusão de eventos. A interface foi construída HTML/CSS e JavaScript.
 
-A aplicação tem como objetivo fornecer o ranking de um determinado movimento com base nos dados armazenados no banco, retornando as informações em formato JSON.
+A estrutura do projeto foi organizada de forma simples e objetiva, separando a camada de conexão com o banco de dados, modelagem e interface, facilitando a manutenção e possíveis evoluções futuras.
+
 
 ## 🚀 Tecnologias Utilizadas
 - Apache 2 (servidor http)
@@ -37,12 +39,12 @@ define( 'DB_HOST', 'mysql57');
 define( 'DB_PORT', '3306');
 define( 'DB_NAME', 'cr_group' );
 define( 'DB_USER', 'cr_group' );
-define( 'DB_PASSWORD', '123456@@ );
+define( 'DB_PASSWORD', '123456@@' );
 ```
 
 ### 🔹 1.4 Rodar o Docker  
 ```sh
-doker compose up
+docker compose up
 ```
 O projeto estará disponível em: http://localhost:8080
 
